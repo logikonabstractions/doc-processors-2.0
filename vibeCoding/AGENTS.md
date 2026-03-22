@@ -14,7 +14,7 @@ This file is the overriding, baseline workflow contract. Each mode-specific `AGE
 
 	1. User instructions in chat
 	2. This file
-	3. The mode-specific workflow contract for your task will detail the rest: `AGENTS_<mode>.md`
+	3. The mode-specific workflow contract for your task will detail the rest. You will under it under: <.mode>/`AGENTS_<mode>.md`
 
 **Important**: you only need to read & consider this file and the files contained in your workflow's folder (`.vibe`, `.component`, `.architecture`). Ignore the rest unless specifically mentioned. (For instance, a **component** may refer to a specific **architectural element** from `.architecture`)
 
