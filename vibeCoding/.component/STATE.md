@@ -7,20 +7,21 @@ This file tracks large, "hot topics" that are ongoing. It may not be active all 
 - You only use this file when major blockers/issues are present.
 
 ## Current focus
-- Target element: <10 | 20 | 30 | …>
-- Revision ID: Comp.<element>.0.1
+- Target element: 10
+- Revision ID: Comp.10.0.1
 
 ## Objective (current breakdown)
-<!-- 1 sentence. Keep aligned with the target element in `.architecture/ARCHITECTURE_DESCRIPTION.md`. -->
+Break down Element 10 (API Gateway) into concrete, implementable components with specific technology choices and clear responsibilities.
 
 ## Active assumptions / constraints
-<!-- Keep only the assumptions or constraints that materially affect the current component breakdown. -->
-- <assumption or constraint>
+- AWS API Gateway HTTP API type selected over REST API for lower cost and simpler configuration.
+- Per-IP rate limiting deferred to a future iteration; account/route-level throttling is sufficient initially.
+- Custom domain + TLS is included as a component but may be deferred during early development (open question raised).
+- CloudFront + WAF not included initially (open question raised).
 
 ## Active issues
-<!-- Keep only active issues here. Move resolved items to HISTORY.md. -->
-- [ ] Comp.<element>.0.1: <short title>
-  - Impact: QUESTION <!-- QUESTION | BLOCKER -->
-  - Status: NOT_STARTED <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | DONE -->
-  - Unblock condition: <what must be true to proceed>
-  - Notes: <optional context>
+- [ ] Comp.10.0.1: CloudFront front-loading decision
+  - Impact: QUESTION
+  - Status: NOT_STARTED
+  - Unblock condition: Decision on whether CloudFront + WAF should be added from the start or deferred
+  - Notes: Raised as open question in COMPONENTS_DESCRIPTIONS.md. Does not block initial component design.
