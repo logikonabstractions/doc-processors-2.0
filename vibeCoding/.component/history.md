@@ -12,24 +12,12 @@ Use the most relevant template below when adding an entry. All entries must conf
 
 
 ## Resolved issues
-- <Comp-N.N>: <TITLE>
-  - YYYY-MM-DD 
-  - Component ID: <ID>
-  - Resolution: <1-2 lines>
-  - Notes: <optional>
 
 ## Component-design decisions
-<!-- Keep only decisions worth preserving across revisions. -->
-- YYYY-MM-DD: <decision>
-  - Component ID: <Component ID>
-  - Related Discussions if any: <Comp-N.N>
-  - Rationale: <1-2 lines>
-  - Impact: <what parts of the component design this affects>
+- 2026-03-22: Initial component breakdown for Element 70 (Format Registry) — 4 components
+  - Component ID: 70.1, 70.2, 70.3, 70.4
+  - Related Discussions if any: N/A
+  - Rationale: Element 70 decomposes naturally into a read-only API (70.1), a data store (70.2), a seed/admin mechanism (70.3), and a Terraform module (70.4). DynamoDB chosen over S3 for query flexibility; Terraform seeding preferred over manual updates for auditability.
+  - Impact: Sets the component structure for the Format Registry. All four components required for a deployable, independently manageable registry service.
 
 ## Superseded choices / changes
-<!-- Optional. Use when previous choices were later invalidated. -->
-- YYYY-MM-DD: <old choice>
-  - Component ID: <Component ID>
-  - Related Discussions if any: <Comp-N.N>
-  - Replaced by: <new direction>
-  - Reason: <why it changed>
