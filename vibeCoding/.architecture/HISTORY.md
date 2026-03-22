@@ -40,6 +40,13 @@ Use the most relevant template below when adding an entry. All entries must conf
   - Rationale: Human specified 4 preferences — maximal decoupling (atomic deployments), serverless-first (scale-to-zero, no reserved capacity), minimal storage (ephemeral only), unpredictable traffic handling. All 3 open discussion items resolved accordingly.
   - Impact: All compute elements are now serverless functions. Upload/download is direct-to-storage via pre-signed URLs. Format Registry is a standalone service. All elements independently deployable. Architecture is extensible to container-based workers for future long-running conversions.
 
+## FREEZE
+- 2026-03-22: Architecture FROZEN at revision Arch.0.2
+  - All 7 architectural elements finalized (10, 20, 30, 40, 50, 60, 70)
+  - All 3 discussion items resolved: Arch-0.1 (direct-to-storage uploads), Arch-0.2 (serverless workers), Arch-0.3 (standalone Format Registry)
+  - Key decisions captured in STATE.md for downstream agent reference
+  - Architecture is now locked; component breakdown may proceed
+
 ## Superseded assumptions / changes
 <!-- Optional. Use when previous assumptions were later invalidated. -->
 - 2026-03-22: Element 20 previously allowed API-proxied file upload as an option
