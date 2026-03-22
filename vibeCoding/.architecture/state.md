@@ -1,4 +1,13 @@
-**Template file, copy but do not edit**
+# STATE
+
+This file tracks large, "hot topics" that are ongoing. It may not be active all the time.
+
+
+## State management rules
+
+- The current target system should remain stable during a draft unless a human changes the problem statement or scope.
+- The status can be set to `DONE` only when the human reviewer has explicitly approved the result
+- Keep this file focused on current execution state. Put rollups and resolved items in `history.md`.
 
 ## Current focus
 

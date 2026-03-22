@@ -5,14 +5,14 @@
 Translate **one architectural element** into a **component-level design**.
 
 ## Instruction precedence & read order
-1. As specified by `AGENTS.md`
+1. As specified by `agents.md`
 2. This file
-3. `.component/COMPONENTS_DESCRIPTIONS.md`
-4. `.component/STATE.md`
-5. `.component/DISCUSSION.md`
-6. `.component/HISTORY.md`
-7. `.architecture/STATE.md` — specifically the `Key Architecture Decisions` section (read-only reference)
-8. `.architecture/ARCHITECTURE_DESCRIPTION.md` (read-only reference)
+3. `.component/components_descriptions.md`
+4. `.component/state.md`
+5. `.component/discussion.md`
+6. `.component/history.md`
+7. `.architecture/state.md` — specifically the `Key Architecture Decisions` section (read-only reference)
+8. `.architecture/architecture_description.md` (read-only reference)
 
 ## Meta-templates
 
@@ -30,17 +30,17 @@ This mode receives **exactly one architectural element** and breaks it down into
 
 ## Core output
 
-The deliverable is a complete list of components, conform to the format in `COMPONENTS_DESCRIPTIONS.md`
+The deliverable is a complete list of components, conform to the format in `components_descriptions.md`
 
 ## Input requirements
 
 The prompt must provide or reference:
 - the target architectural element number (e.g. "element 10")
-- access to the current `.architecture/ARCHITECTURE_DESCRIPTION.md` (or its relevant section)
+- access to the current `.architecture/architecture_description.md` (or its relevant section)
 
-If the architecture has not been frozen (status ≠ FREEZE in `.architecture/STATE.md`), log a warning in `.component/STATE.md` but proceed unless explicitly told to stop.
+If the architecture has not been frozen (status ≠ FREEZE in `.architecture/state.md`), log a warning in `.component/state.md` but proceed unless explicitly told to stop.
 
-**Architecture context**: before starting work, read the `Key Architecture Decisions` section in `.architecture/STATE.md`. This section contains the major orientations chosen during the architecture review (cloud provider, core patterns, technology families, key constraints). All component-level decisions must be consistent with these architecture-level decisions.
+**Architecture context**: before starting work, read the `Key Architecture Decisions` section in `.architecture/state.md`. This section contains the major orientations chosen during the architecture review (cloud provider, core patterns, technology families, key constraints). All component-level decisions must be consistent with these architecture-level decisions.
 
 ## Abstraction rules
 
@@ -66,4 +66,4 @@ There is no fixed upper bound on component count — use as many as relevant.
 
 ## Question lifecycle
 
-1. Create a `Comp-N.N` item in `.component/DISCUSSION.md`, following instructions provided there.
+1. Create a `Comp-N.N` item in `.component/discussion.md`, following instructions provided there.

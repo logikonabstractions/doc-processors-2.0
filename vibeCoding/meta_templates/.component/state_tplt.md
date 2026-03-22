@@ -6,7 +6,7 @@
 - Status: NOT_STARTED  <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | DONE -->
 
 ## Objective (current breakdown)
-<!-- 1 sentence. Keep aligned with the target element in `.architecture/ARCHITECTURE_DESCRIPTION.md`. -->
+<!-- 1 sentence. Keep aligned with the target element in `.architecture/architecture_description.md`. -->
 
 ## Active assumptions / constraints
 <!-- Keep only the assumptions or constraints that materially affect the current component breakdown. -->
@@ -24,7 +24,7 @@
 - [ ] DECISIONS_CAPTURED
 
 ## Active issues
-<!-- Keep only active issues here. Move resolved items to HISTORY.md. -->
+<!-- Keep only active issues here. Move resolved items to history.md. -->
 - [ ] Comp.<element>.0.1: <short title>
   - Impact: QUESTION <!-- QUESTION | MINOR | MAJOR | BLOCKER -->
   - Status: OPEN <!-- OPEN | IN_PROGRESS | BLOCKED | RESOLVED | DECISION_REQUIRED -->

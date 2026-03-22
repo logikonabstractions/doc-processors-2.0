@@ -11,17 +11,17 @@
 - Status: NOT_STARTED  <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | BLOCKED | DONE -->
 
 ## Objective (current checkpoint)
-<!-- 1 sentence. Keep in sync with PLAN.md for the active checkpoint. -->
+<!-- 1 sentence. Keep in sync with plan.md for the active checkpoint. -->
 
 ## Deliverables (current checkpoint)
-<!-- Concrete files/modules/behaviors. Keep in sync with PLAN.md for the active checkpoint. -->
+<!-- Concrete files/modules/behaviors. Keep in sync with plan.md for the active checkpoint. -->
 
 ## Acceptance (current checkpoint)
-<!-- Verifiable conditions. Keep in sync with PLAN.md for the active checkpoint. -->
+<!-- Verifiable conditions. Keep in sync with plan.md for the active checkpoint. -->
 
 ## Work log (current session)
 <!-- Append-only bullets for what changed and why. Prefer file/line references. -->
-- 2026-03-05: Updated `README.md` and `.vibe/AGENTS_VIBE.md` to point to canonical meta templates instead of re-embedding template definitions, reducing doc duplication.
+- 2026-03-05: Updated `readme.md` and `.vibe/agents_vibe.md` to point to canonical meta templates instead of re-embedding template definitions, reducing doc duplication.
 
 ## Evidence
 <!-- Paste command outputs, links to commits/PRs, screenshots, etc. -->
@@ -35,7 +35,7 @@
 - [ ] RETROSPECTIVE_DONE
 
 ## Active issues
-<!-- Keep only active issues here. Move resolved items to HISTORY.md. -->
+<!-- Keep only active issues here. Move resolved items to history.md. -->
 - [ ] ISSUE-001: <short title>
   - Impact: QUESTION <!-- QUESTION | MINOR | MAJOR | BLOCKER -->
   - Status: OPEN <!-- OPEN | IN_PROGRESS | BLOCKED | RESOLVED | DECISION_REQUIRED -->

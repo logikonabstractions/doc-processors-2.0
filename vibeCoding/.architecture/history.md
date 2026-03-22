@@ -56,3 +56,4 @@ Use the most relevant template below when adding an entry. All entries must conf
   - Related Discussions if any: Arch-0.3
   - Replaced by: Standalone serverless service backed by managed key-value store
   - Reason: Maximal decoupling preference — format changes must be deployable independently of API and Worker services
+S

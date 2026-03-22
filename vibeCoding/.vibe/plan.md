@@ -21,4 +21,4 @@
 - Demo commands:
   - `<exact command 1>`
 - Evidence:
-  - <what to paste into .vibe/STATE.md Evidence>
+  - <what to paste into .vibe/state.md Evidence>

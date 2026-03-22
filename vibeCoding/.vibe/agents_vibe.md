@@ -9,38 +9,38 @@ Translate **one component** into implementable stages and checkpoints, then impl
 **MUST contain one** of the following:
 
 - **A component identifier** (ID or name, e.g. "component 10.2") → triggers **VIBE-DRAFT**
-- **A checkpoint identifier** (e.g. "checkpoint 10.2.1.1") matching an entry in `.vibe/PLAN.md` → triggers **VIBE-IMPLEMENT**
+- **A checkpoint identifier** (e.g. "checkpoint 10.2.1.1") matching an entry in `.vibe/plan.md` → triggers **VIBE-IMPLEMENT**
 
 If the input is ambiguous, **always ask to confirm** which sub-mode applies.
 
 
 ## VIBE-DRAFT — Plan stages and checkpoints for a component
 
-Given a component identifier, read its description from `.component/COMPONENTS_DESCRIPTIONS.md` and draft `.vibe/PLAN.md`. Organize work into **stages** (groups of related implementation steps) and **checkpoints** (small, reviewable units within a stage).
+Given a component identifier, read its description from `.component/components_descriptions.md` and draft `.vibe/plan.md`. Organize work into **stages** (groups of related implementation steps) and **checkpoints** (small, reviewable units within a stage).
 
 ### Instruction precedence & read order
-1. As specified by `AGENTS.md`
+1. As specified by `agents.md`
 2. This file
-3. `.architecture/ARCHITECTURE_DESCRIPTION.md` (read-only reference)
-4. `.component/COMPONENTS_DESCRIPTIONS.md` (read-only reference)
-5. `.vibe/PLAN.md`
-6. `.vibe/STATE.md`
-7. `.vibe/HISTORY.md`
-8. `.vibe/CONTEXT.md`
+3. `.architecture/architecture_description.md` (read-only reference)
+4. `.component/components_descriptions.md` (read-only reference)
+5. `.vibe/plan.md`
+6. `.vibe/state.md`
+7. `.vibe/history.md`
+8. `.vibe/context.md`
 
 ---
 
 ## VIBE-IMPLEMENT — Implement a specific checkpoint
 
-Given a checkpoint identifier, implement it according to `.vibe/PLAN.md`.
+Given a checkpoint identifier, implement it according to `.vibe/plan.md`.
 
 ### Instruction precedence & read order
-1. As specified by `AGENTS.md`
+1. As specified by `agents.md`
 2. This file
-3. `.vibe/PLAN.md`
-4. `.vibe/STATE.md`
-5. `.vibe/HISTORY.md`
-6. `.vibe/CONTEXT.md`
+3. `.vibe/plan.md`
+4. `.vibe/state.md`
+5. `.vibe/history.md`
+6. `.vibe/context.md`
 
 ---
 
@@ -61,8 +61,8 @@ Found under `/meta_templates/.vibe`
 - Limit changes to what is necessary to meet acceptance criteria.
 
 ## Metafile updates
-- When a checkpoint moves to DONE, update `.vibe/STATE.md` to reflect the new state.
-- NEVER remove checkpoints from `.vibe/PLAN.md` unless explicitly asked to.
+- When a checkpoint moves to DONE, update `.vibe/state.md` to reflect the new state.
+- NEVER remove checkpoints from `.vibe/plan.md` unless explicitly asked to.
 - NEVER re-number checkpoints unless explicitly asked to.
 
 ## Version control policy

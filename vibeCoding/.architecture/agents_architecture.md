@@ -5,12 +5,12 @@
 Translate a product or problem statement into an **architectural design**.
 
 ## Instruction precedence & read order
-1. As specified by `AGENTS.md`
+1. As specified by `agents.md`
 2. This file
-3. `.architecture/ARCHITECTURE_DESCRIPTION.md`
-4. `.architecture/STATE.md`
-5. `.architecture/DISCUSSION.md`
-6. `.architecture/HISTORY.md`
+3. `.architecture/architecture_description.md`
+4. `.architecture/state.md`
+5. `.architecture/discussion.md`
+6. `.architecture/history.md`
 
 ## Meta-templates
 
@@ -30,7 +30,7 @@ It must not define implementation strategies or concrete technology choices (for
 
 ## Core output
 
-The deliverable is a markdown document that gives a **structured architectural breakdown** of the proposed solution, conforming to `ARCHITECTURE_DESCRIPTION.md`.
+The deliverable is a markdown document that gives a **structured architectural breakdown** of the proposed solution, conforming to `architecture_description.md`.
 
 The output must:
 
@@ -60,7 +60,7 @@ Use top-level element numbering in increments of 10 (10, 20, 30...)
 
 ## Architecture planning rule
 
-Use `.architecture/DISCUSSION.md` to track architecture questions that require discussion, investigation, clarification, or explicit decision. Do not over-use this track for minor decisions. Keep it for blocking architectural choices.
+Use `.architecture/discussion.md` to track architecture questions that require discussion, investigation, clarification, or explicit decision. Do not over-use this track for minor decisions. Keep it for blocking architectural choices.
 
 ## FREEZE step
 
@@ -70,21 +70,21 @@ When the architecture has been reviewed, approved, and is considered stable, it 
 
 When the human reviewer confirms the architecture is ready to freeze:
 
-1. **Update `.architecture/STATE.md`**:
+1. **Update `.architecture/state.md`**:
    - Set `Status` to `FREEZE`
    - Remove all HTML comments and placeholder text (clean up the template artifacts)
    - Add a `## Key Architecture Decisions` section summarizing the major orientations chosen during the architecture review (providers, core patterns, technology families, key constraints, priorities.) as concise bullet points. This section is the **primary reference** for downstream agents working on components
-   - Clear the `Active issues` section (move any remaining items to `HISTORY.md`)
+   - Clear the `Active issues` section (move any remaining items to `history.md`)
    - Clear the `Workflow state` checkboxes
 
-2. **Update `.architecture/HISTORY.md`**: append a FREEZE entry recording the date and revision that was frozen.
+2. **Update `.architecture/history.md`**: append a FREEZE entry recording the date and revision that was frozen.
 
 3. **Update this file or other architecture documents** if any process notes need to reflect the frozen state.
 
 ### Purpose of Key Architecture Decisions
 
-The `Key Architecture Decisions` section in STATE.md serves as a compact reference so that agents working on components or implementation have immediate visibility into the choices that were made at the architecture level. This prevents contradictory decisions (e.g., choosing a vendor that conflicts with an already-decided cloud provider).
+The `Key Architecture Decisions` section in state.md serves as a compact reference so that agents working on components or implementation have immediate visibility into the choices that were made at the architecture level. This prevents contradictory decisions (e.g., choosing a vendor that conflicts with an already-decided cloud provider).
 
 ## Question lifecycle
 
-1. Create an `Arch-N.N` item in `.architecture/DISCUSSION.md`. Follow instructions provided there.
+1. Create an `Arch-N.N` item in `.architecture/discussion.md`. Follow instructions provided there.
