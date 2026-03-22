@@ -4,7 +4,7 @@
 
 Use this repository as a **lightweight, human-in-the-loop planning system**. It supports 3 modes: **architecture**, **component** and **vibe** (which has two sub-modes: **vibe-draft** and **vibe-implement**). Each mode can be used in isolation. A logical flow can also be used, defining **architectural elements**, from each of which we can derive **components**. From each component, **vibe-draft** can be used to write Stages & Checkpoints, which can then be coded using **vibe-implement**. Or, one can directly write Stages & Checkpoints to **vibe-implement** them.
 
-This file is the overriding, baseline workflow contract. Each mode-specific `AGENTS_<mode>.md` file extends this contract with mode-specific rules.
+This file is the overriding, baseline workflow contract. Each mode-specific `agents_<mode>.md` file extends this contract with mode-specific rules.
 
 ## Generic instructions
 	- The mode (**architecture**, **component** or **vibe**) must be clearly specified. Either earlier in the conversation (e.g. it is clear from conversation history which mode is expected) or explicitly in the prompt. If you are unsure, you MUST ask to confirm.
@@ -14,7 +14,7 @@ This file is the overriding, baseline workflow contract. Each mode-specific `AGE
 
 	1. User instructions in chat
 	2. This file
-	3. The mode-specific workflow contract for your task will detail the rest: `AGENTS_<mode>.md`
+	3. The mode-specific workflow contract for your task will detail the rest: `agents_<mode>.md`
 
 **Important**: you only need to read & consider this file and the files contained in your workflow's folder (`.vibe`, `.component`, `.architecture`). Ignore the rest unless specifically mentioned. (For instance, a **component** may refer to a specific **architectural element** from `.architecture`)
 
@@ -37,7 +37,7 @@ Each mode uses a `plan.md` file, but its role differs by mode:
 - **architecture** and **component**: `plan.md` is a **question & investigation backlog** — not an implementation plan.
 - **vibe**: `plan.md` is an **ordered checkpoint plan** — the implementation backlog.
 
-See each mode's `AGENTS_<mode>.md` for the specific plan.md semantics and templates.
+See each mode's `agents_<mode>.md` for the specific plan.md semantics and templates.
 
 ## Meta-templates
 
