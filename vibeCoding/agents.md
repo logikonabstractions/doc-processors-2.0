@@ -37,7 +37,7 @@ Each mode uses a `plan.md` file, but its role differs by mode:
 - **architecture** and **component**: `plan.md` is a **question & investigation backlog** — not an implementation plan.
 - **vibe**: `plan.md` is an **ordered checkpoint plan** — the implementation backlog.
 
-See each mode's `AGENTS_<mode>.md` for the specific plan.md semantics and templates.
+See each mode's `agents_<mode>.md` for the specific plan.md semantics and templates.
 
 ## Meta-templates
 
