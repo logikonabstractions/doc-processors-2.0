@@ -56,3 +56,11 @@ Use the most relevant template below when adding an entry. All entries must conf
   - Related Discussions if any: Arch-0.3
   - Replaced by: Standalone serverless service backed by managed key-value store
   - Reason: Maximal decoupling preference — format changes must be deployable independently of API and Worker services
+
+## FREEZE
+
+- 2026-03-22: Architecture FROZEN at revision Arch.0.2
+  - All 3 architectural discussion items resolved (Arch-0.1, Arch-0.2, Arch-0.3)
+  - 7 architectural elements defined: API Gateway (10), Conversion API Service (20), Conversion Worker (30), Message Broker (40), Temporary File Storage (50), Job Metadata Store (60), Format Registry (70)
+  - Key decisions captured in STATE.md `Key Architecture Decisions` section
+  - Architecture description is now locked; downstream component and implementation work may proceed
