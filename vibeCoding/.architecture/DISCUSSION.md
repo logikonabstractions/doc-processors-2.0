@@ -19,7 +19,7 @@ When a question is resolved:
 ### Arch-0.1 — File upload pattern: direct-to-storage vs API-proxied
 
 - Type: DECISION
-- Status: OPEN
+- Status: RESOLVED
 - Related element(s):
   - API Gateway (10), Conversion API Service (20), Temporary File Storage (50)
 - Description:
@@ -34,10 +34,18 @@ When a question is resolved:
 - Resolution criteria:
   - A single upload pattern is chosen and reflected in the architecture description
 
+#### Response — Arch-0.1
+
+- Respondent: human
+- Answer:
+  - **Option A — Direct-to-storage (pre-signed URL)**. In a serverless architecture, the API compute is ephemeral and memory/time constrained, making it impractical to proxy file uploads through it. Intermediate storage with direct upload is the natural and necessary pattern.
+- Additional Details:
+  - This decision follows directly from the serverless-first architectural preference. The Conversion API Service (Element 20) issues pre-signed URLs; clients upload/download directly to/from Temporary File Storage (Element 50). Element 20 never handles file content.
+
 ### Arch-0.2 — Worker deployment model: container-based vs serverless
 
 - Type: DECISION
-- Status: OPEN
+- Status: RESOLVED
 - Related element(s):
   - Conversion Worker (30)
 - Description:
@@ -53,10 +61,18 @@ When a question is resolved:
 - Resolution criteria:
   - A deployment model is chosen for the initial release
 
+#### Response — Arch-0.2
+
+- Respondent: human
+- Answer:
+  - **Option B — Serverless functions**. Conversions are expected to be in the range of seconds to minutes, which fits within serverless execution time limits. Traffic is unpredictable and bursty with no reserved capacity, making pay-per-invocation and scale-to-zero ideal.
+- Additional Details:
+  - This keeps options open for container-based workers in future iterations if long-running conversions are needed. The queue-based decoupling (Element 40) means container workers could consume from the same queue without changing the API layer — a non-breaking extension.
+
 ### Arch-0.3 — Format Registry: embedded configuration vs standalone service
 
 - Type: DECISION
-- Status: OPEN
+- Status: RESOLVED
 - Related element(s):
   - Format Registry (70), Conversion API Service (20), Conversion Worker (30)
 - Description:
@@ -69,6 +85,14 @@ When a question is resolved:
   - Whether format additions should be deployable independently of the core services
 - Resolution criteria:
   - A deployment approach is chosen for the Format Registry
+
+#### Response — Arch-0.3
+
+- Respondent: human
+- Answer:
+  - **Option B — Standalone service**. This aligns with the maximal-decoupling preference and allows format registry updates to be deployed independently of the API and Worker services.
+- Additional Details:
+  - Practically, this is a lightweight serverless function backed by a managed key-value store. The registry data (format definitions, conversion path matrix, option schemas) lives in the data store and is served via a read-only API. Consumers (Element 20, Element 30) should cache responses with a short TTL to minimize cross-service calls. This keeps it simple while achieving full deployment atomicity.
 
 ## Response template
 
