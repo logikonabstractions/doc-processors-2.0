@@ -1,4 +1,4 @@
-# AGENTS.md — Overriding workflow contract
+# agents.md — Overriding workflow contract
 
 ## Purpose
 
@@ -14,30 +14,30 @@ This file is the overriding, baseline workflow contract. Each mode-specific `AGE
 
 	1. User instructions in chat
 	2. This file
-	3. The mode-specific workflow contract for your task will detail the rest. You will under it under: <.mode>/`AGENTS_<mode>.md`
+	3. The mode-specific workflow contract for your task will detail the rest: `AGENTS_<mode>.md`
 
 **Important**: you only need to read & consider this file and the files contained in your workflow's folder (`.vibe`, `.component`, `.architecture`). Ignore the rest unless specifically mentioned. (For instance, a **component** may refer to a specific **architectural element** from `.architecture`)
 
 ## History management
 
-For all modes, `.<mode>/HISTORY.md` tracks advancement of the task. Append an entry when:
+For all modes, `.<mode>/history.md` tracks advancement of the task. Append an entry when:
 	- A status moves to `DONE`
 	- A review round is completed
 	- An important decision is made
 
-Do **not** remove or rewrite earlier entries — HISTORY.md is append-only.
+Do **not** remove or rewrite earlier entries — history.md is append-only.
 
 ## State management
 
-For all modes, `.<mode>/STATE.md` tracks current focus, active blockers, and work in progress. Update it whenever focus shifts or a blocker is added/resolved.
+For all modes, `.<mode>/state.md` tracks current focus, active blockers, and work in progress. Update it whenever focus shifts or a blocker is added/resolved.
 
-## PLAN.md conventions
+## plan.md conventions
 
-Each mode uses a `PLAN.md` file, but its role differs by mode:
-- **architecture** and **component**: `PLAN.md` is a **question & investigation backlog** — not an implementation plan.
-- **vibe**: `PLAN.md` is an **ordered checkpoint plan** — the implementation backlog.
+Each mode uses a `plan.md` file, but its role differs by mode:
+- **architecture** and **component**: `plan.md` is a **question & investigation backlog** — not an implementation plan.
+- **vibe**: `plan.md` is an **ordered checkpoint plan** — the implementation backlog.
 
-See each mode's `AGENTS_<mode>.md` for the specific PLAN.md semantics and templates.
+See each mode's `AGENTS_<mode>.md` for the specific plan.md semantics and templates.
 
 ## Meta-templates
 

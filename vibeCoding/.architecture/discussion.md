@@ -5,13 +5,13 @@
 - This is the **architecture discussions**.
 - Use it to track architecture questions that require clarification, comparison, investigation, or explicit decision.
 - Keep one item per question or decision.
-- When a question is resolved, keep the item here for traceability, mark it `RESOLVED`, and summarize the outcome in `HISTORY.md`.
+- When a question is resolved, keep the item here for traceability, mark it `RESOLVED`, and summarize the outcome in `history.md`.
 - Any Arch-X.Y with a status `RESOVLED` should not be updated later. If the issue needs to be revisited, favor opening a new Arch-X.Y and reference the previous discussion.
 
 ## Question resolution
 
 When a question is resolved:
-  - Add a relevant entry to `HISTORY.md`
+  - Add a relevant entry to `history.md`
   - Update this file's status to `DONE` along with any field (notes, etc.)
 
 ## Active architecture issues
