@@ -56,4 +56,11 @@ Use the most relevant template below when adding an entry. All entries must conf
   - Related Discussions if any: Arch-0.3
   - Replaced by: Standalone serverless service backed by managed key-value store
   - Reason: Maximal decoupling preference — format changes must be deployable independently of API and Worker services
+
+## Architecture freeze
+- 2026-03-22: Architecture revision Arch.0.1 FROZEN
+  - All 3 discussion items (Arch-0.1, Arch-0.2, Arch-0.3) resolved
+  - 7 architectural elements defined (10, 20, 30, 40, 50, 60, 70)
+  - Key Architecture Decisions captured in state.md
+  - Architecture is now locked for downstream component and implementation work
 S

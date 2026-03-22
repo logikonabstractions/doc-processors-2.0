@@ -12,36 +12,46 @@ This file tracks large, "hot topics" that are ongoing. It may not be active all 
 ## Current focus
 
 - Revision ID: Arch.0.1
-- Status: NOT_STARTED  <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | DONE | FREEZE -->
+- Status: FREEZE
 
 ## Objective (current draft)
-<!-- 1 sentence. Keep aligned with `.architecture/architecture_description.md`. -->
+
+Design a serverless, maximally-decoupled micro-service architecture for ephemeral file conversions on AWS, starting with text-based formats.
 
 ## Active assumptions / constraints
-<!-- Keep only the assumptions or constraints that materially affect the current architecture draft. -->
-- <assumption or constraint>
+
+- Everything hosted on AWS
+- Fast development priority: favor managed services over custom code
+- IaC via Terraform
+- Text file conversions only in initial scope (extensible to other types)
+- Files are ephemeral with time-limited retention
+- Individual file sizes are bounded (maximum upload size enforced)
 
 ## Work log (current session)
-<!-- Append-only bullets for what changed and why. Prefer file/section references. -->
-- YYYY-MM-DD: <change made and reason>
+
+- 2026-03-22: Architecture FREEZE executed. All discussion items resolved. Key decisions captured.
 
 ## Workflow state
-<!-- Dispatcher flags. Checked = active/needed. Cleared once handled. -->
-- [ ] PROBLEM_CLARIFIED
-- [ ] DRAFT_CREATED
-- [ ] HUMAN_REVIEW_REQUIRED
-- [ ] DECISIONS_CAPTURED
+
+- [x] PROBLEM_CLARIFIED
+- [x] DRAFT_CREATED
+- [x] HUMAN_REVIEW_REQUIRED
+- [x] DECISIONS_CAPTURED
 
 ## Key Architecture Decisions
-<!-- Populated at FREEZE. Summarize the major orientations chosen during the architecture review.
-     This section is the primary reference for downstream agents (component, vibe).
-     Use concise bullet points. Examples: cloud provider, core patterns, technology families, key constraints. -->
-- <decision>
+
+- **Cloud provider**: AWS exclusively
+- **Compute model**: Serverless-first for all compute elements — scale-to-zero, pay-per-invocation, no reserved capacity
+- **Deployment philosophy**: Maximal decoupling — each service independently deployable with atomic deployments
+- **File transfer pattern**: Direct-to-storage via pre-signed URLs; API services never proxy file content
+- **Processing model**: Asynchronous, queue-based job processing; Message Broker decouples API from workers
+- **Storage philosophy**: Minimal and ephemeral only — files and job metadata auto-expire via lifecycle policies / TTL
+- **Worker deployment**: Serverless functions triggered by queue events (seconds-to-minutes conversions); container-based workers preserved as future extensibility path via the same queue
+- **Format Registry**: Standalone serverless service backed by managed key-value store; independently deployable from API and Worker services
+- **Traffic profile**: Designed for unpredictable, bursty usage with rapid scale-up and scale-to-zero
+- **Security posture**: Anonymous users, rate limiting at API Gateway, pre-signed time-limited URLs for all file access, TLS, non-guessable job IDs
+- **IaC**: Terraform for all cloud infrastructure
 
 ## Active issues
-<!-- Keep only active issues here. Move resolved items to history.md. -->
-- [ ] Arch.0.1: <short title>
-  - Impact: QUESTION <!-- QUESTION | MINOR | MAJOR | BLOCKER -->
-  - Status: NOT_STARTED <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | DONE -->
-  - Unblock condition: <what must be true to proceed>
-  - Notes: <optional context>
+
+None. All issues resolved prior to freeze (see history.md).
