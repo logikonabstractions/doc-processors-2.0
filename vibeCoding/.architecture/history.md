@@ -56,4 +56,12 @@ Use the most relevant template below when adding an entry. All entries must conf
   - Related Discussions if any: Arch-0.3
   - Replaced by: Standalone serverless service backed by managed key-value store
   - Reason: Maximal decoupling preference — format changes must be deployable independently of API and Worker services
-S
+
+## FREEZE
+
+- 2026-03-22: Architecture FREEZE applied at revision Arch.0.2
+  - All 3 discussion items (Arch-0.1, Arch-0.2, Arch-0.3) resolved
+  - Architecture reviewed and approved by human reviewer
+  - Key decisions captured in `.architecture/state.md` under "Key Architecture Decisions"
+  - 7 architectural elements defined: API Gateway (10), Conversion API Service (20), Conversion Worker (30), Message Broker (40), Temporary File Storage (50), Job Metadata Store (60), Format Registry (70)
+  - Core pattern: serverless-first, maximally-decoupled, async queue-based processing, direct-to-storage file transfer, ephemeral storage
