@@ -60,7 +60,30 @@ Use top-level element numbering in increments of 10 (10, 20, 30...)
 
 ## Architecture planning rule
 
-Use `.architecture/PLAN.md` to track architecture questions that require discussion, investigation, clarification, or explicit decision. Do not over-use this track for minor decisions. Keep it for blocking architectural choices.
+Use `.architecture/DISCUSSION.md` to track architecture questions that require discussion, investigation, clarification, or explicit decision. Do not over-use this track for minor decisions. Keep it for blocking architectural choices.
+
+## FREEZE step
+
+When the architecture has been reviewed, approved, and is considered stable, it enters the **FREEZE** state. This signals that the architectural design is locked and downstream work (component breakdown, implementation) can safely rely on it.
+
+### FREEZE checklist
+
+When the human reviewer confirms the architecture is ready to freeze:
+
+1. **Update `.architecture/STATE.md`**:
+   - Set `Status` to `FREEZE`
+   - Remove all HTML comments and placeholder text (clean up the template artifacts)
+   - Add a `## Key Architecture Decisions` section summarizing the major orientations chosen during the architecture review (providers, core patterns, technology families, key constraints, priorities.) as concise bullet points. This section is the **primary reference** for downstream agents working on components
+   - Clear the `Active issues` section (move any remaining items to `HISTORY.md`)
+   - Clear the `Workflow state` checkboxes
+
+2. **Update `.architecture/HISTORY.md`**: append a FREEZE entry recording the date and revision that was frozen.
+
+3. **Update this file or other architecture documents** if any process notes need to reflect the frozen state.
+
+### Purpose of Key Architecture Decisions
+
+The `Key Architecture Decisions` section in STATE.md serves as a compact reference so that agents working on components or implementation have immediate visibility into the choices that were made at the architecture level. This prevents contradictory decisions (e.g., choosing a vendor that conflicts with an already-decided cloud provider).
 
 ## Question lifecycle
 

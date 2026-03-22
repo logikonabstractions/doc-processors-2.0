@@ -11,7 +11,8 @@ Translate **one architectural element** into a **component-level design**.
 4. `.component/STATE.md`
 5. `.component/DISCUSSION.md`
 6. `.component/HISTORY.md`
-7. `.architecture/ARCHITECTURE_DESCRIPTION.md` (read-only reference)
+7. `.architecture/STATE.md` — specifically the `Key Architecture Decisions` section (read-only reference)
+8. `.architecture/ARCHITECTURE_DESCRIPTION.md` (read-only reference)
 
 ## Meta-templates
 
@@ -37,7 +38,9 @@ The prompt must provide or reference:
 - the target architectural element number (e.g. "element 10")
 - access to the current `.architecture/ARCHITECTURE_DESCRIPTION.md` (or its relevant section)
 
-If the architecture has not been reviewed/approved (status ≠ DONE in `.architecture/STATE.md`), log a warning in `.component/STATE.md` but proceed unless explicitly told to stop.
+If the architecture has not been frozen (status ≠ FREEZE in `.architecture/STATE.md`), log a warning in `.component/STATE.md` but proceed unless explicitly told to stop.
+
+**Architecture context**: before starting work, read the `Key Architecture Decisions` section in `.architecture/STATE.md`. This section contains the major orientations chosen during the architecture review (cloud provider, core patterns, technology families, key constraints). All component-level decisions must be consistent with these architecture-level decisions.
 
 ## Abstraction rules
 
