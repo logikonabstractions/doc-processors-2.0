@@ -7,20 +7,16 @@ This file tracks large, "hot topics" that are ongoing. It may not be active all 
 - You only use this file when major blockers/issues are present.
 
 ## Current focus
-- Target element: <10 | 20 | 30 | …>
-- Revision ID: Comp.<element>.0.1
+- Target element: 70
+- Revision ID: Comp.70.0.1
 
 ## Objective (current breakdown)
-<!-- 1 sentence. Keep aligned with the target element in `.architecture/ARCHITECTURE_DESCRIPTION.md`. -->
+Break down Architecture Element 70 (Format Registry) into concrete, implementable components.
 
 ## Active assumptions / constraints
-<!-- Keep only the assumptions or constraints that materially affect the current component breakdown. -->
-- <assumption or constraint>
+- Format registry data is small and rarely changes — DynamoDB on-demand is cost-effective.
+- Consumers cache responses, so the registry API is not on the critical latency path.
+- Write access is admin/deploy-time only; the runtime API is strictly read-only.
 
 ## Active issues
-<!-- Keep only active issues here. Move resolved items to HISTORY.md. -->
-- [ ] Comp.<element>.0.1: <short title>
-  - Impact: QUESTION <!-- QUESTION | BLOCKER -->
-  - Status: NOT_STARTED <!-- one of: NOT_STARTED | IN_PROGRESS | IN_REVIEW | DONE -->
-  - Unblock condition: <what must be true to proceed>
-  - Notes: <optional context>
+- (none)
